@@ -1,0 +1,77 @@
+/vshowdict 4 dict def
+/inch {72 mul} def
+/vshow
+ {
+	 vshowdict begin
+	 /thestring exch def
+	 /lineskip exch def
+	  thestring 
+	  {
+		  /charcode exch def
+		  /thechar ( ) dup 0 charcode put def
+		  0 lineskip neg rmoveto
+		  gsave
+		  thechar stringwidth pop 2 div neg 0 rmoveto
+		  thechar show
+		  grestore
+	  }forall
+	  end
+ }def
+ 
+ /pinkpetal 
+{ newpath 
+0 0 moveto 
+0 0 -7 
+13 0 7 curveto 
+0 7 7 
+13 0 0 curveto 
+closepath
+1.0 0.5 1.0  setrgbcolor fill
+gsave 
+1 setgray fill 
+grestore 
+0.1 setlinewidth 
+0 setgray stroke 
+} def
+
+/flower 
+{ 10 10 translate 5 
+	{ 
+	pinkpetal 72 rotate 
+	} repeat
+}def
+
+ 
+/Helvetica findfont 16 scalefont setfont
+72 576 moveto
+16 (I LOVE TO PROGRAM) vshow
+122 576 moveto
+16 (POSTSCRIPT IS EASY TO LEARN) vshow
+172 576 moveto
+16 (A HAIKU FOR YOU) vshow
+272 576 moveto
+16 (BY SARAH REGAN) vshow
+
+0 0 moveto
+0 inch 9 inch translate 10 10 scale flower
+0 0 moveto
+.2 inch 0 inch translate .5 .5 scale flower
+0 0 moveto
+.3 inch -.1 inch translate .5 .5 scale flower
+0 0 moveto
+0 inch -1 inch translate 3 3 scale flower
+0 0 moveto
+0 inch -.3 inch translate .6 .6 scale flower
+0 0 moveto
+-.2 inch -.3 inch translate .3 .3 scale flower
+0 0 moveto
+-2 inch -3 inch translate 10 10 scale flower
+0 0 moveto
+-.32 inch -.35 inch translate 1 1 scale flower
+ showpage
+ 
+
+
+ 
+ 
+ 

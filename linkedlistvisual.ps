@@ -1,0 +1,135 @@
+%nodes are here as are arrows for one row, need to take up full paper
+/inch {72 mul} def
+/Times-Roman findfont 30 scalefont setfont
+/arrowhead
+{
+newpath
+1 inch 1 inch moveto
+0 inch 0 inch rlineto 
+.3 inch .5 inch rlineto
+.3 inch -.5 inch rlineto
+-.3 inch .2 inch rlineto
+closepath
+0 setgray fill
+}def
+
+/arrow
+{
+newpath
+1 inch 1 inch moveto
+2 setlinewidth
+newpath
+1 inch 1 inch .5 inch 200 -20 arc stroke
+1.03 inch .5 inch translate .3 .3 scale -7 rotate arrowhead
+gsave
+}def
+
+/otherarrow
+{
+newpath
+0 inch 0 inch moveto
+2 setlinewidth
+newpath
+1 inch 1 inch .5 inch 200 -20 arc stroke
+.23 inch .39  inch translate .3 .3 scale 13 rotate arrowhead
+%grestore
+}def
+
+
+/nodebox
+{
+newpath
+	1 inch 1 inch moveto
+	
+	0 inch 0 inch rlineto 
+	0 inch 1 inch rlineto
+	.5 inch 0 inch rlineto
+	0 inch -1 inch rlineto
+	closepath
+	
+	0 setgray stroke
+}def
+/node
+{
+nodebox
+.5 inch 0 translate nodebox
+}def
+
+
+/totalnode
+{
+0 inch 9 inch translate node
+3 {1 inch 0 translate node} repeat
+
+2.5 inch -1.5 inch translate 90 rotate node
+5{-2 inch 0 inch translate node} repeat
+
+2.5 inch 1.5 inch translate 90 rotate node
+2{1 inch 0 inch translate node} repeat
+}def
+/allarrow
+{
+1.3 inch -6.2 inch translate 180 rotate arrow
+1.5 inch -1.5 inch translate 3.5 3.5 scale 6 rotate arrow
+1.5 inch -1.6 inch translate 3.5 3.5 scale 7 rotate arrow
+7 inch -2.5 inch translate 3.5 3.5 scale 95 rotate otherarrow
+-4.6 inch -1.2 inch translate 3.3 3.3 scale -2 rotate otherarrow
+-5.5 inch 1.5 inch translate 3.3 3.3 scale -20 rotate otherarrow
+-5.5 inch .5 inch translate 3.3 3.3 scale -20 rotate otherarrow
+-5.5 inch -.8 inch translate 3.3 3.3 scale -10 rotate otherarrow
+-5.3 inch -.7 inch translate 3.3 3.3 scale -10 rotate otherarrow
+-1.7 inch 9.5 inch translate 3.5 3.5 scale -100 rotate otherarrow
+-5.5 inch .5 inch translate 3.5 3.5 scale -20 rotate otherarrow
+-5.3 inch -.8 inch translate 3.5 3.5 scale -10 rotate otherarrow
+}def
+
+/numbers{
+1.2 inch 10.3 inch moveto
+(1) show
+2.7 inch 10.3 inch moveto
+(2) show
+4.2 inch 10.3 inch moveto
+(3) show
+5.7 inch 10.3 inch moveto
+(4) show
+5.9 inch 9.1 inch moveto
+(5) show
+5.9 inch 7.6 inch moveto
+(6) show
+5.9 inch 6.1 inch moveto
+(7) show
+5.9 inch 4.6 inch moveto
+(8) show
+5.9 inch 3.1 inch moveto
+(9) show
+5.8 inch 1.6 inch moveto
+(10) show
+4.5 inch 1.4 inch moveto
+(11) show
+3 inch 1.4 inch moveto
+(12) show
+1.5 inch 1.4 inch moveto
+(13) show
+
+1 inch 9.5 inch moveto
+(Head) show
+1.1 inch 2.1 inch moveto
+(Tail)show
+
+1 inch 8 inch moveto
+(Linked List: Sarah Regan) show
+}def
+
+numbers
+totalnode
+allarrow
+
+
+%-3 inch -.5 inch moveto
+
+0 setgray stroke
+
+
+
+showpage
+

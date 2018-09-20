@@ -1,0 +1,71 @@
+/inch {72 mul} def
+
+/smile1
+{
+gsave
+1.00 1.00 0 setrgbcolor
+1 inch 1 inch 1 inch 0 360 arc closepath fill
+
+0 0 0 setrgbcolor
+.5 inch 1.3 inch .2 inch 0 360 arc closepath fill
+1.5 inch 1.3 inch .2 inch 0 360 arc closepath fill
+
+1 setlinecap
+5 setlinewidth
+1 inch 1 inch .5 inch 200 340 arc stroke
+grestore
+}def
+/smile2
+{
+0 setgray
+0.6 setlinewidth 
+1 inch 1 inch 1 inch 0 360 arc closepath stroke
+
+1 inch 1 inch .5 inch 210 330 arc closepath
+gsave
+
+1 0 0 setrgbcolor fill
+grestore
+stroke
+
+.5 inch 1.3 inch 0.2 inch 0 360 arc closepath
+gsave
+
+0.92 0.08 0.08 setrgbcolor fill
+grestore
+stroke
+1.5 inch 1.3 inch 0.2 inch 0 360 arc closepath
+gsave
+
+0.92 0.08 0.08 setrgbcolor fill
+grestore
+stroke
+}def
+/smile3
+{
+newpath
+1 inch 1 inch moveto
+0 2 inch rlineto
+2 inch 0 rlineto
+0 -2 inch rlineto
+-2 inch 0 rlineto
+closepath
+gsave
+
+0.5 1 0.5 setrgbcolor
+fill
+grestore
+1 0 0 setrgbcolor
+4 setlinewidth
+stroke
+
+0 0 0 setrgbcolor
+1.5 inch 2.3 inch .1 inch 0 360 arc closepath fill
+2.5 inch 2.3 inch .1 inch 0 360 arc closepath fill
+2 inch 1.8 inch .2 inch 200 340 arc stroke
+
+}def
+smile3
+3 inch 3 inch translate smile1
+2.8 inch 1 inch translate smile2
+showpage

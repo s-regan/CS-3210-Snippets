@@ -1,0 +1,66 @@
+%Sarah Regan PPL Spring 2018
+%
+/inch {72 mul} def
+
+%----Procedures----
+/cardsize
+{
+newpath
+	1 inch 9 inch moveto
+	3.5 inch 0 inch rlineto 
+	0 inch 2 inch rlineto
+	-3.5 inch 0 inch rlineto
+	closepath
+	1.0 1.0 0.33  setrgbcolor fill
+}def
+
+/border
+{
+newpath
+	1.2 inch 9.15 inch moveto
+	3.1 inch 0 inch rlineto 
+	0 inch 1.7 inch rlineto
+	-3.1 inch 0 inch rlineto
+	closepath
+	2 setlinewidth 
+	0 0 0 setrgbcolor stroke
+}def
+
+/bubble
+{
+newpath
+	0 inch 0 inch moveto
+	%bubble bit
+	0.67 1.00 1.00  setrgbcolor fill
+	1 inch  1 inch .3 inch 0 360 arc closepath fill
+	0.33 1.00 1.00  setrgbcolor fill
+	%reflect
+	1 inch 1 inch 0.2 inch 0 120 arc closepath
+    gsave
+	0.83 1.0 1.0 setrgbcolor fill
+    grestore
+    stroke
+}def
+
+
+%---MAIN----
+cardsize
+border
+
+0 0 moveto
+2.8 inch 9.4 inch translate 1 1 scale bubble
+.3 inch 0 inch translate .5 .5 scale bubble
+1 inch 0 inch translate .5 .5 scale bubble
+0 setgray
+/Helvetica-Bold findfont 100 scalefont setfont
+-9 inch 3.5 inch moveto
+(Sarah Regan) show
+/Helvetica findfont 50 scalefont setfont
+-9 inch 2.5 inch moveto
+(email here) show
+-9 inch 1.5 inch moveto
+(phone here) show
+/Helvetica-Oblique findfont 50 scalefont setfont
+-9 inch .3 inch moveto
+("Now THAT's a business card!) show
+showpage

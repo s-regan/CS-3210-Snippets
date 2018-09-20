@@ -1,0 +1,39 @@
+/inch {72 mul} def
+/depth 0 def
+/maxdepth 5 def
+/down {/depth depth 1 add def}def
+/up {/depth depth 1 sub def} def
+
+/vertLine
+{
+0 inch 2 inch rlineto currentpoint
+stroke translate
+0 inch 0 inch moveto 
+}def
+
+/Fract
+{
+/var exch def
+gsave
+var dup scale
+5 setlinewidth
+down vertLine
+depth maxdepth le
+	{
+	350 rotate var Fract
+	-185 rotate var Fract 
+	}if up
+	grestore
+}def
+
+gsave
+	4 inch 5.5 inch moveto 3 3 scale
+	.7 Fract
+	90 rotate .7 Fract
+	180 rotate .7 Fract
+	270 rotate .7 Fract
+	stroke
+grestore
+6 inch 1 inch moveto
+(Sarah Regan) show
+showpage
